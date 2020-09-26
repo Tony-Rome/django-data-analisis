@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+{% if error_message %}
+    <div class="ui negative message">
+        <i class="close icon"></i>
+        <div class="header">
+            {{ error_message }}
+        </div>
+    </div>
+{% endif %}
+<div class="block-center">
+    <form action="" method="POST" class="ui form">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="ui button positive mtop">Login</button>
+    </form>
+
+</div>
+{% endblock content  %}
